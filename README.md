@@ -1,14 +1,14 @@
 TUTOR EXPERTO CON IA LOCAL (OLLAMA)
- Descripción del Proyecto
+# Descripción del Proyecto
 Sistema de tutoría personalizada basado en Inteligencia Artificial que funciona 100% local preservando la privacidad de los datos. El asistente se especializa dinámicamente en cualquier tema académico que el usuario elija y proporciona respuestas expertas, recomendaciones y evaluaciones.
-Características Principales
+# Características Principales
 •	 100% Local: Usa Ollama (sin enviar datos a la nube)
 •	 Especialización Dinámica: Se adapta a cualquier tema académico
 •	 Respuestas Expertas: Da respuestas directas, recomendaciones y evaluaciones
 •	 Mantiene Contexto: Recuerda la conversación para respuestas coherentes
 •	 Cambio de Tema: Cambia entre temas sin reiniciar el programa
 •	 Multimodelo: Soporta llama3, mistral, phi y otros modelos de Ollama
- Objetivos del Sistema
+# Objetivos del Sistema
 Este asistente fue diseñado cumpliendo los siguientes requisitos:
 1. Sistema Local Preservando Privacidad
 •	No requiere conexión a internet (excepto instalación inicial)
@@ -35,7 +35,7 @@ d) Estrategias de Contexto
 •	Evita repetir preguntas
 •	Continúa el hilo natural de la conversación
  Instalación
-Requisitos Previos
+# Requisitos Previos
 •	Python 3.8+
 •	Ollama instalado y corriendo
 •	8GB RAM mínimo (recomendado para llama3)
@@ -69,14 +69,14 @@ Flujo de Uso
    - 'reiniciar'  → Nueva conversación
    - 'cambiar'    → Cambiar de tema
    - 'historial'  → Ver conversación
- Comandos Disponibles
+# Comandos Disponibles
 Comando	Descripción	Ejemplo
 salir	Cierra el programa completamente	salir
 reiniciar	Borra la conversación actual (mismo tema)	reiniciar
 cambiar	Cambia a otro tema sin cerrar el programa	cambiar
 historial	Muestra toda la conversación	historial
 
-Ejemplos de Uso
+# Ejemplos de Uso
 Ejemplo 1: Tutor de Deportes
 📚 ¿Tema del tutor? → Deportes
 🎓 Pregunta: ¿Quién ganó el mundial 2018?
@@ -106,7 +106,7 @@ Ejemplo 3: Cambiar de Tema
 🎓 Pregunta sobre Música: ¿Qué es el tempo?
 🤖 Tutor:
 El tempo es la velocidad a la que se ejecuta una pieza musical...
- Configuración Avanzada
+#Configuración Avanzada
 Modelos Disponibles
 Modelo	RAM	Velocidad	Calidad	Uso
 llama3	8GB	Media	⭐⭐⭐⭐⭐	Mejor calidad
@@ -119,13 +119,13 @@ En el código
     "top_p": 0.9,       # Diversidad (0.0-1.0)
     "num_predict": 512  # Tokens máximos
 }
-Personalización del System Prompt
+# Personalización del System Prompt
 Edita la función _construir_system_prompt() para:
 •	Cambiar el tono del tutor
 •	Agregar restricciones específicas
 •	Modificar el formato de respuesta
 
-🔬 Técnicas de Prompt Engineering Implementadas
+# Técnicas de Prompt Engineering Implementadas
 1. System Prompts Estructurados
 Ubicación en código: Función _construir_system_prompt()
 def _construir_system_prompt(self) -> str:
@@ -141,7 +141,7 @@ def _construir_system_prompt(self) -> str:
     </como_responder>
     </system_instruction>"""
 Propósito: Definir el comportamiento base del modelo de forma estructurada y clara.
-2. Few-Shot Learning
+# 2. Few-Shot Learning
 Ubicación en código: Función _crear_few_shot()
 def _crear_few_shot(self) -> List[Dict]:
     return [
@@ -155,7 +155,7 @@ def _crear_few_shot(self) -> List[Dict]:
         }
     ]
 Propósito: Enseñar al modelo con ejemplos cómo debe responder en diferentes situaciones.
-3. Delimitadores XML
+# 3. Delimitadores XML
 Ubicación en código: Función enviar_mensaje()
 mensaje_xml = f"""<pregunta>
 {mensaje}
@@ -169,7 +169,7 @@ mensaje_xml = f"""<pregunta>
 Responde como experto...
 </instrucciones>"""
 Propósito: Separar claramente las diferentes partes del prompt para mejor comprensión del modelo.
-4. Manejo de Contexto
+# 4. Manejo de Contexto
 Ubicación en código: Función _obtener_contexto()
 def _obtener_contexto(self, ultimos_n: int = 3) -> str:
     """Obtiene los últimos 3 intercambios para mantener coherencia"""
@@ -177,7 +177,7 @@ def _obtener_contexto(self, ultimos_n: int = 3) -> str:
     # Extrae últimos N mensajes
     # Retorna contexto formateado
 Propósito: Mantener coherencia en la conversación recordando intercambios previos.
-🎨 Formato de Salida
+# Formato de Salida
 El sistema produce respuestas en formato de texto plano con estructura clara:
 Respuesta Directa
 [Respuesta principal]
@@ -199,7 +199,7 @@ Mi recomendación:
  Privacidad y Seguridad
 •	Datos locales: Nada se envía a internet
 •	Sin registro: No se guardan logs permanentes
-🐛 Solución de Problemas
+# 🐛 Solución de Problemas
 Error: "No se puede conectar a Ollama"
 Solución:
 # Verificar que Ollama esté corriendo
@@ -223,7 +223,7 @@ Verificar:
 •	Que ultimos_n no sea 0
 •	Revisar que el historial se esté guardando correctamente
 
-🚀 Mejoras Futuras
+# Mejoras Futuras
 Corto Plazo
 •	[ ] Soporte para documentos PDF/DOCX como base de conocimientos
 •	[ ] Interfaz web con Flask/Streamlit

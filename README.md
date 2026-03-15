@@ -199,7 +199,7 @@ Mi recomendación:
  Privacidad y Seguridad
 •	Datos locales: Nada se envía a internet
 •	Sin registro: No se guardan logs permanentes
-# 🐛 Solución de Problemas
+#  Solución de Problemas
 Error: "No se puede conectar a Ollama"
 Solución:
 # Verificar que Ollama esté corriendo

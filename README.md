@@ -55,7 +55,7 @@ Ejecución Básica
 ollama serve
 
 # 2. Ejecutar el tutor (terminal 2)
-python tutor_socratico_v2_FINAL.py
+python Ollama.py
 Flujo de Uso
 1. El programa pregunta: ¿En qué tema quieres un tutor?
    → Responde: "Deportes", "Música", "Economía", etc.

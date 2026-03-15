@@ -230,9 +230,7 @@ Corto Plazo
 •	[ ] Exportar conversaciones a archivo
 Mediano Plazo
 •	[ ] RAG completo con búsqueda semántica
-•	[ ] Multi-idioma automático
-•	[ ] Evaluación automática de respuestas del estudiante
 Largo Plazo
 •	[ ] Interfaz gráfica nativa
 •	[ ] Integración con herramientas educativas (LMS)
-•	[ ] Sistema de plugins para temas especializados
+
